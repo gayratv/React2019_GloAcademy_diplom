@@ -8,11 +8,13 @@ class CoffeeList extends React.Component {
     state = { coffe_list : [],
               isLoading : false
             };
+    inMountState = false;
 
     componentDidMount() {   
         this.setState({isLoading : true,coffe_list : [] });
   
         let newList =[];
+        this.inMountState = true;
 
         firebase.db.collection('coffe')
         .get()
@@ -41,6 +43,7 @@ class CoffeeList extends React.Component {
     }
 
     render() {
+        // console.log(this.state);
         if (this.state.isLoading) {return <Spinner />};
 
         return(
