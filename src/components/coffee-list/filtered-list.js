@@ -2,6 +2,8 @@ import React from "react";
 import CoffeeItem from "./coffe-item";
 import firebase from "../../firebase/firebase";
 import { withRouter } from "react-router";
+import Spinner from "../spinner";
+
 
 
 // props
@@ -94,6 +96,7 @@ class CoffeeFilteredList extends React.Component {
 
     
     render() {
+        if (this.state.isLoading) {return <Spinner />};
 
         const {coffe_list_render} = this.state;
         if (coffe_list_render.length === 0) return null;

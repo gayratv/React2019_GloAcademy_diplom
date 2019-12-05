@@ -1,0 +1,30 @@
+.cssload-loading {
+    height: 24px;
+    width: 180px;
+	text-align:center;
+    margin: 0 auto;
+    padding: 0;
+	color: black;
+    font-size: 14px;
+    font-family: 'Merienda';
+    // border: 2px solid red;
+
+	animation: cssload-breathe 8.05s ease infinite;
+}	
+
+@keyframes cssload-breathe {
+	0% {
+		letter-spacing: 0;
+		text-shadow: 0 0 1px white;
+	}
+	
+	50% {
+		letter-spacing: 5px;
+		text-shadow: 0 0 3px grey;
+	}
+
+    100% {
+		letter-spacing: 10px;
+		text-shadow: 0 0 6px grey;
+	}
+}

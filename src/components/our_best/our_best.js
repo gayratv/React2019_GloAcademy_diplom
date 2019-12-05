@@ -1,6 +1,7 @@
 import React from "react";
 import CoffeeItemBest from "../coffee-list/coffe-item-best";
 import firebase from "../../firebase/firebase";
+import Spinner from "../spinner";
 
 class OurBest extends React.Component {
 
@@ -35,6 +36,8 @@ componentDidMount() {
 }    
 
     render() {
+        if (this.state.isLoading) {return <Spinner />};
+        
         return(
             
     <section className="best">

@@ -1,6 +1,7 @@
 import React from "react";
 import CoffeeItem from "./coffe-item";
 import firebase from "../../firebase/firebase";
+import Spinner from "../spinner";
 
 class CoffeeList extends React.Component {
 
@@ -40,6 +41,8 @@ class CoffeeList extends React.Component {
     }
 
     render() {
+        if (this.state.isLoading) {return <Spinner />};
+
         return(
             <div className="row">
             <div className="col-lg-10 offset-lg-1">
