@@ -49,7 +49,7 @@ componentDidMount() {
 
                     { this.state.coffe_list.map ( 
                         (itm) => {
-                           return  <CoffeeItemBest price = {itm.price}  name = {itm.name} url = {itm.urlFull} key={itm.id} />;
+                           return  <CoffeeItemBest price = {itm.price}  name = {itm.name} url = {itm.urlFull} key={itm.id} id={itm.id} />;
                         }
                     ) }
 
