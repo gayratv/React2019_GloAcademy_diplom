@@ -1,0 +1,18 @@
+
+Для запуска консоли firebase (видео 27)
+npm install -g firebase-tools
+
+команды давать из корневой директории
+
+firebase login
+firebase init functions
+создает директорию functions
+
+firebase deploy --only functions
+
+***********************************
+firebase init hosting
+firebase deploy
+
+firebase deploy --only hosting
+

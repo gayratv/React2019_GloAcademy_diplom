@@ -1,0 +1,71 @@
+{
+    "coffee": [
+        {
+            "name": "Death Wish Bean",
+            "country": "Brazil",
+            "url": "91DlZZBjxzL._SX522_.jpg",
+            "price": 12.99,
+            "description": "Awaken Your Inner Rebel. <br/>Through our unique blend of Arabica and Robusta beans and our slow roasting process, we naturally produce coffee with 200% more caffeine than your average cup of coffee. There are no additives or additional caffeine added throughout making the blend — only organic, Fair Trade coffee beans."
+        },
+        {
+            "name": "AROMISTICO Coffee 1 kg",
+            "country": "Brazil",
+            "url": "71qBQnpQFYL._SL1500_.jpg",
+            "price": 6.99,
+            "description": "Brew a Rich Family Tradition.<br/> Coffee is our family’s tradition. In the summer of 1870, our family’s passion for the world’s finest coffee became the inspiration for a dedicated family business. Don Francisco’s Coffee named for our grandfather, reflects the art of roasting he learned as a young boy and later passed down to us. Today we continue to honor his legacy and passion by sourcing the world’s best beans and roasting them to perfection to ensure you are getting delicious quality coffee in your cup.",
+            "bestsellers" : true
+        },
+        {
+            "name": "Solimo Coffee Beans 2 kg",
+            "country": "Kenya",
+            "url": "815O9ktyfUL._SL1500_.jpg",
+            "price": 10.73,
+            "description": "Coffee is our Passion <br/> We believe everyone deserves a great cup of coffee, and we’ve been sharing our passion for quality coffee for over a century. We make sure that we source high quality beans (including Organic and Fair Trade), roast each coffee to perfection and offer a variety of coffees to fit a range of tastes and preferences. We hope you enjoy each cup as much as we enjoy crafting coffees for you. Salud!",
+            "bestsellers" : true
+        },
+        {
+            "name": "Black Rifle Coffee",
+            "country": "Kenya",
+            "url": "2019-12-03_09-50-45.png",
+            "price": 19.75,
+            "description": "I started Black Rifle Coffee Company to provide a high-quality, roast-to-order coffee to the pro-2A and veteran communities. Between deployments to Iraq and Afghanistan, I worked to refine both my coffee roasting skills and my firearms skills. I have spent over a decade researching coffee, refining my roast profiles and (of course) drinking what I roast. Black Rifle Coffee is quite literally the combination of my two favorite passions. I take pride in the coffee we roast, the veterans we employ, and the causes we support."
+        },
+        {
+            "name": "Presto Coffee Beans 1 kg",
+            "country": "Columbia",
+            "url": "2019-12-03_09-50-54.png",
+            "price": 15.99,
+            "description": "Presto's Artisan Coffee Beans - Providing You with an Unmatched Taste of Luxury with Each and Every Sip.<br/> Do you consider yourself a coffee connoisseur that's always looking to expand their palate of perfectly roasted and full flavors coffee beans? Are you someone who always values and admires quality and craftsmanship when it comes to coffee?",
+            "bestsellers" : true
+        },
+        {
+            "name": "Organic Coffee One Cup",
+            "country": "Columbia",
+            "url": "51M2fmEXTIL.jpg",
+            "price": 24.99,
+            "description": "Subtle Earth Organic Coffee is full body with a deep, rich chocolaty flavor and a clean finish. Smooth milk chocolate with notes of honey, caramel and cocoa. Non GMO, 100% Arabica.<br/> Subtle Earth Organic is an exceptional Honduran coffee from the Marcala region. No chemical inputs are used. The “cherries (fruit of the coffee bean),” are composted and used as fertilizer, along with vermiculture, and fewer insects are present at the altitude that it’s grown, so no insecticides are necessary. If there ever is a bug problem, farmers sometimes plant peppers as a repellent."
+        }
+    ],
+    "goods": [
+        {
+            "name": "Electric Spice and Coffee Grinder",
+            "url": "41qvqWRCm3L.jpg",
+            "price": 36.99
+        },
+        {
+            "name": "Manual Coffee Grinder",
+            "url": "91gR5HFtmaL._SL1500_.jpg",
+            "price": 25.99
+        },
+        {
+            "name": "Coffee Cup with Lid",
+            "url": "71L5Ut1HHSL._SL1500_.jpg",
+            "price": 15.99
+        },
+        {
+            "name": "Pour Over Coffee Maker",
+            "url": "916TPwGqfML._SL1500_.jpg",
+            "price": 45.99
+        }
+    ]
+}

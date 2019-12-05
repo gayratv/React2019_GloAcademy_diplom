@@ -1,0 +1,42 @@
+.cup_and_smoke {
+    margin-top: 50px;
+
+    &-text {
+        text-align: center;
+    }
+
+    &__line {
+        margin-top: 50px;
+        margin-bottom: 60px;
+        border-top: 2px solid black;
+    }
+}
+
+.goods {
+    &__container {
+        width: 220px;
+        height: 260px;
+        border : 1px solid lightgray;
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+        margin : 40px 40px;
+
+        & p {
+            font-size: 14px;
+            line-height: 14px;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+            margin: 10px 14px ;
+        }
+    }
+
+    &__image {
+        width: 167px;
+        height: 125px;
+        object-fit: contain;
+        margin: 27px 26px 10px 26px;
+    }
+
+    
+}
