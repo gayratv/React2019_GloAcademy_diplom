@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CoffeeFilteredList render /> renders correctly 1`] = `
+"<CoffeeList filtered={false} filteredButton=\\"\\" filteredString=\\"\\">
+  <Spinner>
+    <div>
+      <div className=\\"cssload-loading\\">
+        loading ...
+      </div>
+    </div>
+  </Spinner>
+</CoffeeList>"
+`;

@@ -14,26 +14,20 @@ const props = {
 
 describe('<CoffeeItem render />', () => {
     it('renders correctly', () => {
-        // const tree = shallow(
-        //   <CoffeeItem 
-        //     url = "https://www.sciencenews.org/sites/default/files/main/articles/100315_coffee_opener_NEW_0.jpg"
-        //         name = "Solimo Coffee Beans 2kg"
-        //         country = 'Brazil'
-        //         price = "10.73"
-        //         id = "1" />);
         const tree = shallow(<CoffeeItem {...props} />);
           
-        expect(tree).toMatchSnapshot();
+        // expect(tree).toMatchSnapshot();
+        expect(tree.debug()).toMatchSnapshot();
     
         console.log(tree);
         // expect (tree.prop('name')).toEqual("Solimo Coffee Beans 2kg");
       });
 
       // видео 27:44
-      it('props CoffeeItem', ()=> {
-        const tree = shallow(<CoffeeItem {...props} />);
-        expect(tree.prop('id')).toEqual("1");
-      });
+      // it('props CoffeeItem', ()=> {
+      //   const tree = shallow(<CoffeeItem {...props} />);
+      //   expect(tree.prop('id')).toEqual("1");
+      // });
     });  
     
 

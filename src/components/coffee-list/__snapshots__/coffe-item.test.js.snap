@@ -1,3 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CoffeeItem render /> renders correctly 1`] = `ShallowWrapper {}`;
+exports[`<CoffeeItem render /> renders correctly 1`] = `
+"<div className=\\"shop__item\\">
+  <img src=\\"https://www.sciencenews.org/sites/default/files/main/articles/100315_coffee_opener_NEW_0.jpg\\" style={{...}} alt=\\"coffee\\" onClick={[Function: onClick]} />
+  <div className=\\"shop__item-title\\">
+    Solimo Coffee Beans 2kg
+  </div>
+  <div className=\\"shop__item-country\\">
+    Brazil
+  </div>
+  <div className=\\"shop__item-price\\">
+    10.73
+    $
+  </div>
+</div>"
+`;
