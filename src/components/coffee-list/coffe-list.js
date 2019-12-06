@@ -21,6 +21,7 @@ class CoffeeList extends React.Component {
         .then(
             (querySnapshot) => {
                 if ( !this.inMountState) return;
+                console.log(querySnapshot.size);
                 querySnapshot.forEach (
                   (doc) => 
                     {

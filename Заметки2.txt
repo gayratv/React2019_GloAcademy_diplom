@@ -16,3 +16,16 @@ firebase deploy
 
 firebase deploy --only hosting
 
+
+
+********************************************
+npm install firebase-functions@latest firebase-admin@latest --save
+
+firebase deploy --only functions
+
+https://us-central1-vlasov-react-gloacademy-diplom.cloudfunctions.net/addMessage
+
+https://us-central1-vlasov-react-gloacademy-diplom.cloudfunctions.net/addMessage?text=uppercaseme
+
+Запрос
+https://us-central1-vlasov-react-gloacademy-diplom.cloudfunctions.net/addMessage?text=uppercaseme1
