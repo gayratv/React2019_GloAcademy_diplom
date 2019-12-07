@@ -1,29 +1,146 @@
 import React from "react";
 import TopMenu from "../app-header/top-menu";
 import AppFooter from "../app-header/app-footer";
-// import "../../sass/mainpage.sass";
 import "../../sass/coffeepage.sass";
-import CoffeeFilteredList from "../coffee-list/filtered-list";
+import CoffeeFilteredListView from "../coffee-list/filtered-list-view";
 import InputText from "../small-components/input_state";
+import firebase from "../../firebase/firebase";
 
 class OurCoffe extends React.Component {
 
     state = {
-        filtered : false,
         filteredButton : "",
-        filteredString : ""
+        filteredButtonPrev : "",
+        filteredString : "",
+        filteredStringPrev : "",
+        coffe_list_render : [],
+        coffe_list : [],
+        isLoading : false
     };
+    inMountState = false;
+    filteredString__o = "";
+    filteredStringPrev_o = "";
 
     onClickBtn(fltText) {
         // console.log(fltText);
-        this.setState({ filtered : true, filteredButton : fltText});
+        this.setState( (prevState) =>
+        { return(
+            { 
+                filteredButton : fltText,
+                filteredButtonPrev : prevState.filteredButton
+            }
+            )
+        })
     }
 
 
+    updateSearchString(newList, filteredString) {
+        // console.log('updateSearchString : "',filteredString,'"');
+        let renderArray=[];
+        // filteredString="g";
+
+        if (filteredString !== "" && newList.length > 0) {
+            
+            renderArray = newList.filter( el => {
+                return el.name.toLowerCase().includes(filteredString)
+            });
+        } else {
+            renderArray = [...newList];
+        }
+        return renderArray;
+    }
+
+    updateList() {   
+        if ( this.inMountState) return;
+        const {filteredButtonPrev,filteredButton=""} = this.state;
+
+        if (filteredButtonPrev === filteredButton && this.state.coffe_list.length > 0 )  {
+            // запрашивать базу не надо
+            
+            if ( this.filteredStringPrev_o === this.filteredString__o ) return;
+            const renderArray = this.updateSearchString(this.state.coffe_list,this.state.filteredString);
+            this.filteredString__o = this.filteredStringPrev_o ;
+            this.setState({coffe_list_render : renderArray});
+            return;
+        }
+
+        // запросим базу
+        this.inMountState = true; // служебная переменная - ее будем проверять - вдруг компонент размонтирован
+        // this.setState({isLoading : true,coffe_list : [], coffe_list_render:[] });
+
+        let newList =[];
+
+        let fbRef;
+        if ( filteredButton !== "") {
+            fbRef = firebase.db.collection('coffe').where('country','==',filteredButton); 
+        } else {  
+            fbRef = firebase.db.collection('coffe'); 
+            }
+
+        fbRef.get()
+        .then(
+            (querySnapshot) => {
+                if ( !this.inMountState) return;
+                querySnapshot.forEach (
+                    (doc) => 
+                    {
+                        newList.push({id : doc.id, ...doc.data()});
+                    }
+                );
+
+                const renderArray = this.updateSearchString(newList,this.state.filteredString);
+                
+                this.setState({
+                    isLoading : false,
+                    coffe_list : newList,
+                    coffe_list_render : renderArray
+                });
+                this.inMountState = false;
+            }
+        )
+        .catch(function(error) {
+            console.log("Error getting documents: ", error);
+            this.inMountState = false;
+        });
+    };
+
+    componentDidMount() {
+        // console.log('componentDidMount');
+        this.updateList();
+    }
+
+    componentDidUpdate() {
+        const {
+            filteredButton ,
+            filteredButtonPrev,
+            filteredString ,
+            filteredStringPrev 
+        } = this.state;
+        // console.log('componentDidUpdate ', filteredString, " prev ",filteredStringPrev);
+        
+        if (filteredButton===filteredButtonPrev && filteredString===filteredStringPrev) return;
+        
+        this.updateList();
+    }
+
+    componentWillUnmount() {
+        this.inMountState = false;
+    }
+
     takeSearchString = (val) => {
-        console.log("поисковая строка ",val);
-        let flt = this.state.filteredButton !== "";
-        this.setState({filtered : flt, filteredString : val});
+        // console.log("takeSearchString : ",val);
+        
+        this.setState( (prevState) => {
+            this.filteredString__o = val.toLowerCase();
+            this.filteredStringPrev_o = prevState.filteredString;
+
+            return (
+                { 
+                    filteredString : val.toLowerCase(),
+                    filteredStringPrev : prevState.filteredString
+                }
+        );} );
+            
     }
 
     render() {
@@ -83,11 +200,7 @@ class OurCoffe extends React.Component {
                     </div>
                     <div className="row">
                         <div className="col-lg-10 offset-lg-1">
-                            <CoffeeFilteredList 
-                                filteredButton = {this.state.filteredButton} 
-                                filtered = {this.state.filtered}
-                                filteredString = {this.state.filteredString}
-                            />
+                            <CoffeeFilteredListView coffe_list_render = {this.state.coffe_list_render} />
                         </div>
                     </div>
                 </div>

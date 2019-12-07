@@ -1,0 +1,14 @@
+.shop {
+    padding: 70px 0 40px 0;
+}
+
+.shop__girl {
+    display: block;
+    margin: 0 auto;
+}
+
+.shop__text {
+    margin-top: 25px;
+    font-size: 14px;
+    text-align: center;
+}
